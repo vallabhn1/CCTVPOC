@@ -1,0 +1,24 @@
+{
+    "model_settings": {
+        "person_detection_confidence": 0.5,
+        "gender_classification_confidence": 0.7
+    },
+    "surveillance_settings": {
+        "unattended_bag_threshold": 30,
+        "unattended_child_threshold": 50,
+        "person_tracking_timeout": 30,
+        "minimum_detection_size": 50
+    },
+    "display_settings": {
+        "show_bounding_boxes": true,
+        "show_statistics": true,
+        "show_gender": true,
+        "show_alerts": true,
+        "show_areas": false
+    },
+    "output_settings": {
+        "save_video": true,
+        "save_statistics": true,
+        "statistics_interval": 300
+    }
+}

@@ -1,0 +1,90 @@
+﻿# CCTV Mall Analytics System
+
+A comprehensive CCTV analytics system using YOLOv7 for mall visitor behavior analysis.
+
+## 🎯 Features
+
+- **Unique Visitor Counting**: Track total number of unique visitors
+- **Shopping Behavior Analysis**: Identify who went shopping vs left empty-handed  
+- **Area Popularity Tracking**: Monitor which mall areas get attention vs ignored
+- **Heatmap Generation**: Visual representation of crowd density
+- **Real-time Processing**: GPU-accelerated detection and tracking
+- **Detailed Analytics Reports**: JSON reports with comprehensive data
+
+## 📋 Requirements
+
+- Python 3.9+
+- CUDA-capable GPU (recommended)
+- YOLOv7 weights
+- Required Python packages (see requirements.txt)
+
+## 🚀 Installation
+
+1. Clone this repository
+2. Install requirements: `pip install -r requirements.txt`
+3. Download YOLOv7 weights or use fallback detection
+4. Run: `python cctv.py`
+
+## 💻 Usage
+
+```bash
+python cctv.py --video your_video.mp4 --output analytics_output.mp4
+
+### **7. Create .gitignore file**
+`powershell
+@"
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+pip-log.txt
+pip-delete-this-directory.txt
+.tox
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.log
+.git
+.mypy_cache
+.pytest_cache
+.hypothesis
+
+# Virtual Environment
+.venv/
+venv/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Project specific
+*.mp4
+*.avi
+*.mov
+output_*.mp4
+*_heatmap.png
+*_report.json
+
+# Large files
+*.pt
+*.pth
+*.weights
