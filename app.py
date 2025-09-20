@@ -1,5 +1,6 @@
 import streamlit as st
 import os
+import shutil
 from mall_analytics import UnifiedMallAnalytics
 
 st.title("🏬 Mall CCTV Analytics (Batch Mode with Run Button)")
@@ -33,6 +34,7 @@ if uploaded_files:
             output_video = os.path.join("results", f"{base_name}_result.mp4")
 
             try:
+                # Run analytics
                 core = UnifiedMallAnalytics(video=video_path, weights="yolov7.pt", output=output_video)
                 core.run(video_path, output_video, conf_thres=0.25, iou_thres=0.45)
 
@@ -46,13 +48,28 @@ if uploaded_files:
                 him_report = os.path.join("results", f"{base_name}_himanshu_report.json")
                 deep_report = os.path.join("results", f"{base_name}_deep_report.json")
 
-                if os.path.exists(him_report):
-                    st.write("📄 Himanshu Report:")
-                    st.json(open(him_report).read())
+                # Create zip archive for all outputs
+                zip_dir = os.path.join("results", f"{base_name}_outputs")
+                os.makedirs(zip_dir, exist_ok=True)
 
+                # Copy files into zip folder
+                if os.path.exists(output_video):
+                    shutil.copy(output_video, zip_dir)
+                if os.path.exists(him_report):
+                    shutil.copy(him_report, zip_dir)
                 if os.path.exists(deep_report):
-                    st.write("📄 Deep Report:")
-                    st.json(open(deep_report).read())
+                    shutil.copy(deep_report, zip_dir)
+
+                zip_path = shutil.make_archive(zip_dir, "zip", zip_dir)
+
+                # Show download button
+                with open(zip_path, "rb") as f:
+                    st.download_button(
+                        label="⬇️ Download All Results (ZIP)",
+                        data=f,
+                        file_name=f"{base_name}_results.zip",
+                        mime="application/zip"
+                    )
 
             except Exception as e:
                 st.error(f"❌ Error processing {uploaded_file.name}: {e}")
