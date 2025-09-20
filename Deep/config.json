@@ -1,0 +1,34 @@
+{
+  "video_settings": {
+    "video_source": "Small video Mall shopping mall video shopping mall CCTV camera video no copyright full HD 4K video.mp4",
+    "output_video": "output_analytics.mp4",
+    "save_analytics": true,
+    "display_video": true,
+    "fps": 30
+  },
+  "mall_areas": {
+    "entrance": {"x": 0, "y": 0, "w": 200, "h": 480},
+    "clothing_store": {"x": 200, "y": 0, "w": 200, "h": 240},
+    "electronics": {"x": 400, "y": 0, "w": 200, "h": 240},
+    "food_court": {"x": 200, "y": 240, "w": 400, "h": 240},
+    "exit": {"x": 600, "y": 0, "w": 200, "h": 480},
+    "central_corridor": {"x": 200, "y": 120, "w": 400, "h": 240}
+  },
+  "analytics_parameters": {
+    "min_areas_for_shopping": 2,
+    "min_dwell_time_seconds": 30.0,
+    "min_total_dwell_time_seconds": 60.0,
+    "max_tracking_distance": 100,
+    "confidence_threshold": 0.25,
+    "iou_threshold": 0.45,
+    "heatmap_grid_size": 20,
+    "ignored_area_threshold_percent": 5
+  },
+  "visualization": {
+    "area_color": [100, 100, 100],
+    "text_color": [255, 255, 255],
+    "bbox_thickness": 2,
+    "text_size": 0.5,
+    "heatmap_colormap": "hot"
+  }
+}
