@@ -34,7 +34,7 @@ import pandas as pd
 # Try to import YOLOv7 dependencies
 try:
     import sys
-    YOLOV7_PATH = r"C:\Users\Vallabhj\Downloads\CCTVPOC_integrated\yolov7.pt"
+    YOLOV7_PATH = r"C:\Users\Vallabhj\Downloads\CCTVPOC_integrated\yolov7"
     if os.path.exists(YOLOV7_PATH):
         sys.path.append(YOLOV7_PATH)
         from models.experimental import attempt_load
