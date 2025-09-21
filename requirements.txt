@@ -1,25 +1,28 @@
 # Core
-torch>=2.2.0
-torchvision>=0.17.0
-torchaudio>=2.2.0
+streamlit
+gradio
 
-# Object detection
+# PyTorch (CPU version for Hugging Face Spaces, replace with CUDA locally if GPU available)
+torch
+torchvision
+torchaudio
+
+# Computer vision + plotting
 opencv-python
-numpy
 matplotlib
+numpy
 pandas
 
-# Web UI
-streamlit
-altair
-pydeck
-
-# Utils
+# YOLOv7 dependencies
+scipy
 tqdm
 seaborn
-scipy
+PyYAML
 scikit-learn
 
-# For JSON / reporting
-ujson
-PyYAML>=6.0
+# For handling video + media
+ffmpeg-python
+moviepy
+
+# Utils
+requests
