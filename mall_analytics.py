@@ -35,7 +35,7 @@ class UnifiedMallAnalytics:
     produce annotated videos, JSON reports, and a combined JSON.
     """
 
-    def __init__(self, video=None, weights="yolov7.pt", output=None):
+    def __init__(self, video=None, weights="yolo\yolov7.pt", output=None):
         self.device = "cuda" if torch.cuda.is_available() else "cpu"
         self.weights = ensure_weights(weights)
         self.video = video
